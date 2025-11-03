@@ -37,11 +37,6 @@ This video showcases the end-to-end functionality, from inputting a GitHub repos
 
 ![454307305-62f04eb9-9979-45bb-9dc8-b3bd6ab2faf2](https://github.com/user-attachments/assets/f1a32750-3f94-4147-9d5a-cf1624112a6e)
 
-
-### 1-2. AST Analysis Visual
-
-The image below illustrates the concept of Abstract Syntax Trees, which is central to our token optimization strategy.
-
 ---
 
 ## 2. Technical Architecture and Model Selection
