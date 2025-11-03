@@ -1,10 +1,15 @@
-# github-service
+# Auto-Generation System: A Deep Dive into Code-to-Doc AI
+This project develops an advanced, multi-modal AI system designed to solve the critical developer problem of maintaining up-to-date and informative documentation. The core service is the **Automatic README Generation AI**, which transforms raw GitHub code into structured Markdown documentation. This feature is integrated into a larger career management platform, aiming to streamline workflow convenience and enhance job-seeking capabilities.
 
-GitHub Activity Data Analysis Service
+### The Challenge of Documentation & Token Efficiency
+
+Manually documenting extensive codebases is tedious and error-prone. Furthermore, feeding entire code files to Large Language Models (LLMs) is prohibitively expensive due to high token consumption.
+
+**Our Solution**: Implement an **Abstract Syntax Tree (AST) Analysis Pipeline** to pre-process code, drastically reducing the token budget while maximizing the information density of the input prompt.
 
 ---
 
-### 📂 Branch Naming Convention
+### 📂 Branch/Commit Naming Convention
 
 **Examples:**
 
@@ -21,20 +26,6 @@ GitHub Activity Data Analysis Service
 | `refactor` | Improve code quality without changing functionality |
 | `test`     | Add or modify test code                             |
 | `hotfix`   | Apply an urgent fix                                 |
-
----
-
-# README.md Auto-Generation System: A Deep Dive into Code-to-Doc AI
-
-## 0. Project Abstract and Rationale
-
-This project develops an advanced, multi-modal AI system designed to solve the critical developer problem of maintaining up-to-date and informative documentation. The core service is the **Automatic README Generation AI**, which transforms raw GitHub code into structured Markdown documentation. This feature is integrated into a larger career management platform, aiming to streamline workflow convenience and enhance job-seeking capabilities.
-
-### The Challenge of Documentation & Token Efficiency
-
-Manually documenting extensive codebases is tedious and error-prone. Furthermore, feeding entire code files to Large Language Models (LLMs) is prohibitively expensive due to high token consumption.
-
-**Our Solution**: Implement an **Abstract Syntax Tree (AST) Analysis Pipeline** to pre-process code, drastically reducing the token budget while maximizing the information density of the input prompt.
 
 ---
 
@@ -138,6 +129,12 @@ BART_VLLM_SERVER_URL="http://127.0.0.1:8000/v1/completions"
 ### 3-3. Execution Steps
 
 1. **Install Dependencies**: Install all required packages using `pip`.
+```bash
+# You can use Anaconda/Miniconda or venv
+conda create -n [ENVIRONMENT_NAME] python=3.10
+conda activate [ENVIRONMENT_NAME]
+pip install -r requirements.txt
+```
 2. **API Setup**: Configure the `.env` file with necessary API keys (Section 3-2).
 3. **Run vLLM Server**: (If the Summarization feature is active) Start the local GPU server hosting the BART model via vLLM.
 4. **Execute Generation Script**: Run the main Python script, providing the GitHub repository URL as input.
