@@ -1,1 +1,21 @@
-이 곳은 2025-2학기 오픈소스SW Term Project Repository입니다.
+# github-service
+GitHub 활동 데이터 분석 서비스
+
+### 📂 브랜치 네이밍 규칙
+
+예시:
+- `feat/login-api`
+- `fix/comment-delete-bug`
+- `test/user-service-test`
+
+**타입 목록:**
+
+| 타입       | 설명                       |
+|------------|----------------------------|
+| `feat`     | 새로운 기능 추가           |
+| `fix`      | 버그 수정                  |
+| `refactor` | 리팩토링 (기능 변경 없이 코드 개선) |
+| `test`     | 테스트 코드 관련           |
+| `hotfix`   | 긴급 수정                  |
+
+---
