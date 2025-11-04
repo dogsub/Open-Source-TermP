@@ -1,4 +1,4 @@
-# Auto-Generation System: A Deep Dive into Code-to-Doc AI
+# README Auto-Generation System
 This project develops an advanced, multi-modal AI system designed to solve the critical developer problem of maintaining up-to-date and informative documentation. The core service is the **Automatic README Generation AI**, which transforms raw GitHub code into structured Markdown documentation. This feature is integrated into a larger career management platform, aiming to streamline workflow convenience and enhance job-seeking capabilities.
 
 ### The Challenge of Documentation & Token Efficiency
