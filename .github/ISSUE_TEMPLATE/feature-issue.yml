@@ -1,5 +1,5 @@
-name: ✨ Feature
-description: 새로운 기능 개발을 위한 이슈 템플릿입니다.
+name: "✨ Feature"
+description: "새로운 기능 개발을 위한 이슈 템플릿입니다."
 title: "[Feature] "
 labels: ["Feature"]
 assignees: []
@@ -14,17 +14,17 @@ body:
   - type: textarea
     id: description
     attributes:
-      label: 📄 상세 설명 (Description)
-      description: 구현할 기능의 동작, 기대 효과, 관련 요구사항 등을 구체적으로 작성하세요.
-      placeholder: 예) 사용자가 로그인 후 마이페이지 접근 시 최근 활동 기록 표시 기능
+      label: "📄 상세 설명 (Description)"
+      description: "구현할 기능의 동작, 기대 효과, 관련 요구사항 등을 구체적으로 작성하세요."
+      placeholder: "예) 사용자가 로그인 후 마이페이지 접근 시 최근 활동 기록 표시 기능"
     validations:
       required: true
 
   - type: textarea
     id: tasks
     attributes:
-      label: 🧩 세부 작업 (Subtasks)
-      description: 필요한 하위 작업 또는 단계별 구현 항목을 나열하세요.
+      label: "🧩 세부 작업 (Subtasks)"
+      description: "필요한 하위 작업 또는 단계별 구현 항목을 나열하세요."
       placeholder: |
         - [ ] API 명세 작성
         - [ ] Service/Repository 구현
@@ -48,9 +48,9 @@ body:
   - type: input
     id: duedate
     attributes:
-      label: ⏰ 예상 완료일 (Due Date)
-      description: 목표 완료 일자를 입력하세요. (예: 2025-11-10)
-      placeholder: YYYY-MM-DD
+      label: "⏰ 예상 완료일 (Due Date)"
+      description: "목표 완료 일자를 입력하세요. (예: 2025-11-10)"
+      placeholder: "YYYY-MM-DD"
     validations:
       required: false
 
