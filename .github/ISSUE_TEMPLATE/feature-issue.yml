@@ -1,0 +1,62 @@
+name: "✨ Feature"
+description: "새로운 기능 개발을 위한 이슈 템플릿입니다."
+title: "[Feature] "
+labels: ["Feature"]
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## ✨ 기능 요약 (Feature Summary)
+        구현할 기능의 목적과 개요를 간략히 작성해주세요.
+
+  - type: textarea
+    id: description
+    attributes:
+      label: "📄 상세 설명 (Description)"
+      description: "구현할 기능의 동작, 기대 효과, 관련 요구사항 등을 구체적으로 작성하세요."
+      placeholder: "예) 사용자가 로그인 후 마이페이지 접근 시 최근 활동 기록 표시 기능"
+    validations:
+      required: true
+
+  - type: textarea
+    id: tasks
+    attributes:
+      label: "🧩 세부 작업 (Subtasks)"
+      description: "필요한 하위 작업 또는 단계별 구현 항목을 나열하세요."
+      placeholder: |
+        - [ ] API 명세 작성
+        - [ ] Service/Repository 구현
+        - [ ] 테스트 코드 작성
+        - [ ] 프론트엔드 연동
+    validations:
+      required: false
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: "🎯 우선순위 (Priority)"
+      description: "이 기능의 중요도를 선택하세요 (예: High / Medium / Low)"
+      options:
+        - "❤️‍🔥 High"
+        - "💚 Medium"
+        - "🩶 Low"
+    validations:
+      required: true
+
+  - type: input
+    id: duedate
+    attributes:
+      label: "⏰ 예상 완료일 (Due Date)"
+      description: "목표 완료 일자를 입력하세요. (예: 2025-11-10)"
+      placeholder: "YYYY-MM-DD"
+    validations:
+      required: false
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        🔗 관련 링크나 참고 자료가 있다면 아래에 추가해주세요.
+        (예: Jira Ticket, API 문서, 디자인 시안 등)

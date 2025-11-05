@@ -1,0 +1,55 @@
+name: "🐞 Bug"
+description: "버그 리포트를 위한 이슈 템플릿입니다."
+title: "[Bug] "
+labels: ["Bug"]
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 🐞 버그 개요 (Bug Summary)
+        발견한 버그의 현상과 영향을 간략히 설명해주세요.
+
+  - type: textarea
+    id: description
+    attributes:
+      label: "📄 상세 설명 (Description)"
+      description: "문제가 발생한 동작, 재현 조건, 에러 메시지 등을 구체적으로 작성하세요."
+      placeholder: "예) 로그인 후 마이페이지 접근 시 500 에러 발생"
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: "🧩 재현 단계 (Steps to Reproduce)"
+      description: "버그를 재현하기 위한 단계를 순서대로 작성하세요."
+      placeholder: |
+        1. 로그인
+        2. 마이페이지 클릭
+        3. 오류 발생
+    validations:
+      required: false
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: "✅ 기대 동작 (Expected Behavior)"
+      description: "정상적인 경우 기대되는 동작을 설명하세요."
+      placeholder: "정상적으로 마이페이지가 로드되어야 합니다."
+    validations:
+      required: false
+
+  - type: dropdown
+    id: severity
+    attributes:
+      label: "⚠️ 심각도 (Severity)"
+      description: "버그의 영향을 선택하세요."
+      options:
+        - "🚨 Critical"
+        - "🔥 Major"
+        - "⚙️ Minor"
+        - "💤 Trivial"
+    validations:
+      required: true

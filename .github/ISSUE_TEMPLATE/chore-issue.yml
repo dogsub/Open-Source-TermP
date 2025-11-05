@@ -1,0 +1,43 @@
+name: "🧹 Chore"
+description: "빌드, 설정, 환경 등 유지보수 작업과 사소한 변경점을 위한 이슈 템플릿입니다."
+title: "[Chore] "
+labels: ["Chore"]
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 🧹 유지보수 및 사소한 작업 개요 (Chore Summary)
+        환경 설정, 빌드, CI/CD 등 유지보수 작업의 목적을 설명해주세요.
+
+  - type: textarea
+    id: description
+    attributes:
+      label: "📄 상세 설명 (Description)"
+      description: "작업 내용과 이유를 구체적으로 작성하세요."
+      placeholder: "예) .gitignore 업데이트, 패키지 버전 정리, CI 워크플로 수정"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: "🧭 작업 유형 (Category)"
+      description: "작업의 유형을 선택하세요."
+      options:
+        - "⚙️ Build / CI 설정"
+        - "📦 Dependency 관리"
+        - "🧰 환경 설정"
+        - "🗑️ 기타 유지보수"
+    validations:
+      required: true
+
+  - type: input
+    id: duedate
+    attributes:
+      label: "⏰ 예상 완료일 (Due Date)"
+      description: "작업 완료 목표 일자를 입력하세요. (예: 2025-11-20)"
+      placeholder: "YYYY-MM-DD"
+    validations:
+      required: false

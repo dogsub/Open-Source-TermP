@@ -1,0 +1,51 @@
+name: "🔧 Refactor"
+description: "코드 구조나 성능을 개선하기 위한 이슈 템플릿입니다."
+title: "[Refactor] "
+labels: ["Refactor"]
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 🔧 리팩터링 개요 (Refactor Summary)
+        개선하려는 대상과 목적을 설명해주세요.
+
+  - type: textarea
+    id: description
+    attributes:
+      label: "📄 상세 설명 (Description)"
+      description: "리팩터링의 배경, 문제점, 개선 목표를 작성하세요."
+      placeholder: "예) 중복 코드 제거, 모듈 구조 개선 등"
+    validations:
+      required: true
+
+  - type: textarea
+    id: targets
+    attributes:
+      label: "🧩 대상 모듈 (Target Modules)"
+      description: "리팩터링 대상 클래스나 모듈, 함수 등을 명시하세요."
+      placeholder: "예) user_service.py, api_handler.js"
+    validations:
+      required: false
+
+  - type: dropdown
+    id: impact
+    attributes:
+      label: "⚙️ 영향 범위 (Impact)"
+      description: "시스템에 미치는 영향을 선택하세요."
+      options:
+        - "🔴 High - 주요 로직 변경"
+        - "🟠 Medium - 일부 기능 영향"
+        - "🟢 Low - 단순 리팩터링"
+    validations:
+      required: true
+
+  - type: input
+    id: duedate
+    attributes:
+      label: "⏰ 예상 완료일 (Due Date)"
+      description: "목표 완료 일자를 입력하세요. (예: 2025-11-15)"
+      placeholder: "YYYY-MM-DD"
+    validations:
+      required: false

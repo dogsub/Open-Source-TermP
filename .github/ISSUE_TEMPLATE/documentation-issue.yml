@@ -1,0 +1,43 @@
+name: "📚 Documentation"
+description: "문서 관련 작업을 위한 이슈 템플릿입니다."
+title: "[Docs] "
+labels: ["Documentation"]
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 📚 문서 개요 (Documentation Summary)
+        작성 또는 수정할 문서의 내용을 설명해주세요.
+
+  - type: textarea
+    id: description
+    attributes:
+      label: "📄 상세 설명 (Description)"
+      description: "추가하거나 변경할 문서의 내용을 구체적으로 작성하세요."
+      placeholder: "예) API 명세서 업데이트, README 개선, 기술 블로그 작성, 수정할 문서의 파일명 또는 경로"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: doc_type
+    attributes:
+      label: "🧾 문서 유형 (Type)"
+      description: "문서의 종류를 선택하세요."
+      options:
+        - "🧩 API 문서"
+        - "📘 개발 가이드"
+        - "🗂️ README / Wiki"
+        - "📰 기타"
+    validations:
+      required: true
+
+  - type: input
+    id: duedate
+    attributes:
+      label: "⏰ 예상 완료일 (Due Date)"
+      description: "문서 작업의 목표 일자를 입력하세요. (예: 2025-11-12)"
+      placeholder: "YYYY-MM-DD"
+    validations:
+      required: false
