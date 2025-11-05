@@ -36,12 +36,14 @@ body:
   - type: dropdown
     id: priority
     attributes:
-      label: 🎯 우선순위 (Priority)
-      description: 이 기능의 중요도를 설정하세요 (예: High / Medium / Low)
+      label: "🎯 우선순위 (Priority)"
+      description: "이 기능의 중요도를 선택하세요 (예: High / Medium / Low)"
       options:
         - "❤️‍🔥 High"
         - "💚 Medium"
         - "🩶 Low"
+    validations:
+      required: true
 
   - type: input
     id: duedate
