@@ -1,6 +1,6 @@
 # 🚀 Pull Request
 
-> 이 PR은 {{description}} 을(를) 위한 요청입니다.
+> 이 PR은 {{description}} 을(를) 위한 요청입니당.
 
 ---
 
