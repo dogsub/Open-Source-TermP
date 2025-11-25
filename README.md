@@ -94,7 +94,20 @@ A separate ensemble system analyzes repository content to recommend technical ta
 | **Python**           | Core runtime environment.                                            | `Python 3.10+`                                                                |
 | **Libraries / SDKs** | Required for LLM inference, AST analysis, and external model access. | `pip install -r requirements.txt` (See `requirements.txt` for exact versions) |
 
-> ⚠️ **Note:** For exact library versions, please refer to the [`requirements.txt`](./requirements.txt) file included in this project.
+
+This project was developed and tested with the following key libraries:
+
+| Package        | Version  | Purpose |
+|---------------|----------|----------|
+| python        | 3.10.x   | Core runtime environment |
+| libcst        | 1.1.0    | AST-based code parsing |
+| requests      | 2.31.0   | GitHub API communication |
+| python-dotenv | 1.0.1    | Environment variable management |
+| groq          | 0.9.0    | Groq API client |
+| google-generativeai | 0.5.2 | Gemini model access |
+| tqdm          | 4.66.1   | Progress bar visualization |
+
+> For the full dependency list, see `requirements.txt`.
 
 ---
 
@@ -186,3 +199,27 @@ python .\main.py "https://github.com/owner/repo" --out .\results --no-image
   - `repo_image.<ext>` : selected repository image (if produced)
 - If `.env` is missing or API keys are not set, some features (README generation, tag extraction) may not run. The script will print errors or skip those steps.
 
+- 
+---
+
+## 6. References & Related Works
+
+This project is grounded in prior research and official technical documentation related to code analysis, token optimization, and large language models.
+
+### Abstract Syntax Tree (AST) & Code Analysis
+- LibCST Documentation – Concrete Syntax Tree for Python  \
+  https://libcst.readthedocs.io/
+- Baxter, I. D., et al. *Clone Detection Using Abstract Syntax Trees*, IEEE, 1998.
+
+### Model Benchmarks
+- Cassano et al., *MultiPL-E: A Scalable and Polyglot Approach to Benchmarking Neural Code Generation*, 2022  \
+  https://arxiv.org/abs/2208.08227
+
+### External AI Platforms & APIs
+- **Groq API Documentation** – High-throughput inference platform used for fast parallel LLM execution.  \
+  https://console.groq.com/docs
+- **Google AI Studio (Gemini API)** – Official platform for accessing Gemini models and experiment management.  \
+  https://aistudio.google.com/
+  
+### Ensemble Learning
+- Dietterich, T. G. *Ensemble Methods in Machine Learning*, Springer, 2000.
