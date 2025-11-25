@@ -121,20 +121,68 @@ BART_VLLM_SERVER_URL="http://127.0.0.1:8000/v1/completions"
 
 ---
 
-### 3-3. Execution Steps
+### 3-3. Execution Steps (current project)
 
-1. **Install Dependencies**: Install all required packages using `pip`.
-```bash
-# You can use Anaconda/Miniconda or venv
-conda create -n [ENVIRONMENT_NAME] python=3.10
-conda activate [ENVIRONMENT_NAME]
-pip install -r requirements.txt
-```
-2. **API Setup**: Configure the `.env` file with necessary API keys (Section 3-2).
-3. **Run vLLM Server**: (If the Summarization feature is active) Start the local GPU server hosting the BART model via vLLM.
-4. **Execute Generation Script**: Run the main Python script, providing the GitHub repository URL as input.
+1. Install dependencies
 
-```bash
-# Example: Running the main README generation script
-python run_readme_generator.py --repo_url "https://github.com/user/project"
+- Recommended: use a Python 3.10 virtual environment (venv or conda)
+- PowerShell (Windows) example:
+```powershell
+# venv example
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+python -m pip install --upgrade pip
+python -m pip install -r .\requirements.txt
+
+# or conda example
+conda create -n gs-env python=3.10 -y
+conda activate gs-env
+python -m pip install -r .\requirements.txt
 ```
+
+2. API keys (`.env`)
+
+- Create a `.env` file in the project root and set required keys.
+- Main environment variables used by the code:
+  - `GROQ_API_KEY` (used for README generation)
+  - `GOOGLE_API_KEY` (used for Gemini / Google generativeai calls)
+  - `GITHUB_TOKEN` (recommended for GitHub API requests, optional)
+
+Example `.env`:
+```
+GROQ_API_KEY=your_groq_api_key_here
+GOOGLE_API_KEY=your_google_api_key_here
+GITHUB_TOKEN=ghp_xxx...   # optional: use to increase rate limits / access private repos
+```
+
+3. vLLM / local LLM server (optional)
+
+- This project uses external APIs (Groq, Google) by default for README/tag generation. A local vLLM server or GPU is not required.
+- Only set up a local vLLM server if you plan to run local models; doing so may require changes to `.env` and the code.
+
+4. Run the script
+
+- The entry point is `main.py`. Pass the GitHub repository URL as the argument.
+- Basic run example (PowerShell):
+```powershell
+# Default run: generate README, extract tags, download image
+python .\main.py "https://github.com/owner/repo"
+```
+- Options:
+  - `--out <folder>` : output directory to save results (default: `output`)
+  - `--no-readme` : skip README generation
+  - `--no-tags` : skip tag extraction
+  - `--no-image` : skip image selection/download
+- Example (specify output folder, skip image):
+```powershell
+python .\main.py "https://github.com/owner/repo" --out .\results --no-image
+```
+
+5. Output files and locations
+
+- Default output structure: `output/<owner__repo>/`
+  - `GENERATED_README.md` : generated README (if produced)
+  - `TAGS.json` : tag extraction result (if produced)
+  - `repo_image.<ext>` : selected repository image (if produced)
+- If `.env` is missing or API keys are not set, some features (README generation, tag extraction) may not run. The script will print errors or skip those steps.
+
